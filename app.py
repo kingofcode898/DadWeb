@@ -1,6 +1,13 @@
-from flask import Flask, render_templates
+from flask import Flask, render_template
 
-@app.route
+app=Flask(__name__)
+
+@app.route("/")
+def homepage():
+    return render_template("homepage.html")
+
+
+        
 
 
 if __name__ == '__main__':
