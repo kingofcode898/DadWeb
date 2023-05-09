@@ -6,7 +6,9 @@ app=Flask(__name__)
 def homepage():
     return render_template("homepage.html")
 
-
+@app.route("/services")
+def services():
+   return render_template("services.html")
         
 
 
