@@ -1,2 +1,2 @@
 Flask == 2.2.5
-guincorn == 20.1.0
+guincorn == 19.8.1
