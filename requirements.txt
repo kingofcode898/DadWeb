@@ -1,2 +1,2 @@
-Flask = 2.3.1
-guincorn = 20.1.0
+Flask == 2.3.1
+guincorn == 20.1.0
