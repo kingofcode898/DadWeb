@@ -1,6 +1,19 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app=Flask(__name__)
+
+
+reviews_list = []
+
+@app.route('/reviews', methods=['GET', 'POST'])
+def reviews():
+    if request.method == 'POST':
+        # Handle form submission and store the new review
+        new_review = request.form['review']
+        reviews_list.append(new_review)
+    # Render the reviews page template with the reviews_list passed as a variable
+    return render_template('reviews.html', reviews=reviews_list)
+
 
 @app.route("/")
 def homepage():
@@ -14,9 +27,6 @@ def services():
 def about():
    return render_template("about.html")
 
-@app.route("/reviews")
-def reviews():
-   return render_template("reviews.html")
 
 @app.route("/contact")
 def contact():
