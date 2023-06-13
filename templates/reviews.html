@@ -11,12 +11,14 @@
     {% include "navbar.html" %}
     {% include "banner.html" %}
     <h1 class="mt-5 text-center">Reviews Page</h1>
-    <h1>Reviews</h1>
-    <form action="/reviews" method="POST">
-            <textarea name="review" rows="4" cols="50"></textarea>
+    <h1 class="text-center">Leave a review</h1>
+    <div class="align-items-center">
+        <form action="/reviews" method="POST">
+            <input type="textbox" name="review" rows="4" cols="50"></input>
             <br>
             <input type="submit" value="Submit">
         </form>
+    </div>
         <h2>Existing Reviews</h2>
         <ul>
         {% for review in reviews %}
