@@ -5,6 +5,9 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
+app.use(express.static('public')); 
+app.use('/SNL', express.static('SNL'));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set EJS as the view engine
