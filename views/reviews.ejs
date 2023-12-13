@@ -22,9 +22,9 @@
   </div>
   <h2>Existing Reviews</h2>
   <ul>
-    <% reviews.forEach(review => { %>
-      <li><%= review %></li>
-    <% }); %>
+    <%- reviews.forEach(review => { %>
+      <li><%-= review %></li>
+    <%- })%>
   </ul>
   <div style="height: 600px;"></div>
   <%- include footer.ejs %>
