@@ -5,7 +5,6 @@ const path = require('path');
 
 const app = express();
 const port = 3000;
-
 app.use(express.static('public')); 
 app.use('/SNL', express.static('SNL'));
 
@@ -15,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+//
 const reviewsList = ["This is a test"];
 
 app.get('/reviews', (req, res) => {
