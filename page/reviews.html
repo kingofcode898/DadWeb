@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+  </head>
+  <body>
+    <div class="star-rating">
+      <span class="star" data-value="1">&#9733;</span><!-- the weird value is the ascii for a star-->
+      <span class="star" data-value="2">&#9733;</span>
+      <span class="star" data-value="3">&#9733;</span>
+      <span class="star" data-value="4">&#9733;</span>
+      <span class="star" data-value="5">&#9733;</span>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        //Listener or event manager is created when the thing is created
+        const stars = document.querySelectorAll(".star");//select all thos with the class star
+        let rating = 0;//let the rating be set to zero at the start
+
+
+        stars.forEach((star) => {
+          star.addEventListener("click", () => {
+            rating = star.getAttribute("data-value");
+            highlightStars(rating);//highlight the amount equak 
+          });
+
+          star.addEventListener("mouseover", () => {
+            const hoverValue = star.getAttribute("data-value");
+            highlightStars(hoverValue);
+          });
+
+          star.addEventListener("mouseout", () => {
+            highlightStars(rating);
+          });
+        });
+
+        function highlightStars(rating) {
+          stars.forEach((star) => {
+            if (star.getAttribute("data-value") <= rating) {
+              star.classList.add("filled");
+            } else {
+              star.classList.remove("filled");
+            }
+          }); 
+        }
+        //for each star if there rating is less than the 
+      });
+    </script>
+  </body>
+</html>
